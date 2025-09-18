@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class NotificationAlertsApplication {
 
-    //Temporary commit
+    //first commit
 	public static void main(String[] args) {
 		SpringApplication.run(NotificationAlertsApplication.class, args);
 	}
