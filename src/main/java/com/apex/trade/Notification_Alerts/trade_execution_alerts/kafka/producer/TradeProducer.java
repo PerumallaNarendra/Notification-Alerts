@@ -1,7 +1,6 @@
 package com.apex.trade.Notification_Alerts.trade_execution_alerts.kafka.producer;
 
 import com.apex.trade.Notification_Alerts.trade_execution_alerts.dto.TradeEventDTO;
-import com.apex.trade.Notification_Alerts.trade_execution_alerts.model.TradeEvent;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +15,6 @@ public class TradeProducer {
 
     public void sendTradeExecutionAlert(TradeEventDTO tradeEventDTO) {
         kafkaTemplate.send("trade-execution-alerts", tradeEventDTO);
-        System.out.println("✅ Sent trade alert: " + tradeEventDTO);
+        System.out.println("Sent trade alert to user: " + tradeEventDTO.getUserId());
     }
 }
