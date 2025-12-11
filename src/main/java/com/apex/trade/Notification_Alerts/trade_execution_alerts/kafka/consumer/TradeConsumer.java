@@ -1,8 +1,6 @@
 package com.apex.trade.Notification_Alerts.trade_execution_alerts.kafka.consumer;
 
 import com.apex.trade.Notification_Alerts.trade_execution_alerts.dto.TradeEventDTO;
-import com.apex.trade.Notification_Alerts.trade_execution_alerts.model.TradeEvent;
-import com.apex.trade.Notification_Alerts.trade_execution_alerts.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
