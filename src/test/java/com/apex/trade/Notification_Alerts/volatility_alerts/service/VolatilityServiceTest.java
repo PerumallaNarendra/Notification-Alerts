@@ -1,14 +1,14 @@
 package com.apex.trade.Notification_Alerts.volatility_alerts.service;
 
+import com.apex.trade.Notification_Alerts.notification_service.NotificationService;
 import com.apex.trade.Notification_Alerts.volatility_alerts.config.VolatilityProperties;
 import com.apex.trade.Notification_Alerts.volatility_alerts.domain.IndexPrice;
 import com.apex.trade.Notification_Alerts.volatility_alerts.domain.VolatilityAlert;
 import com.apex.trade.Notification_Alerts.volatility_alerts.repository.IndexPriceRepository;
 import com.apex.trade.Notification_Alerts.volatility_alerts.repository.VolatilityAlertRepository;
-import com.apex.trade.Notification_Alerts.price_alert.service.NotificationService;
+import com.apex.trade.Notification_Alerts.notification_service.NotificationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
 import java.math.BigDecimal;

@@ -5,7 +5,7 @@ import com.apex.trade.Notification_Alerts.volatility_alerts.domain.IndexPrice;
 import com.apex.trade.Notification_Alerts.volatility_alerts.domain.VolatilityAlert;
 import com.apex.trade.Notification_Alerts.volatility_alerts.repository.IndexPriceRepository;
 import com.apex.trade.Notification_Alerts.volatility_alerts.repository.VolatilityAlertRepository;
-import com.apex.trade.Notification_Alerts.price_alert.service.NotificationService;
+import com.apex.trade.Notification_Alerts.notification_service.NotificationService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
