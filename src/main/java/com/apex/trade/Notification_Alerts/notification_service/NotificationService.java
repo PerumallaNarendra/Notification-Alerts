@@ -1,5 +1,6 @@
-package com.apex.trade.Notification_Alerts.price_alert.service;
+package com.apex.trade.Notification_Alerts.notification_service;
 
+import com.apex.trade.Notification_Alerts.trade_execution_alerts.dto.TradeEventDTO;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.mail.SimpleMailMessage;
@@ -52,5 +53,27 @@ public class NotificationService {
             System.err.println("Failed to send email to " + to + ": " + e.getMessage());
             // Handle exception properly, maybe throw a custom exception or log
         }
+    }
+    public void sendTradeAlertEmail(String to, TradeEventDTO tradeEventDTO) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(to);
+        message.setSubject("Trade Execution Alert - " + tradeEventDTO.getOrderId());
+
+        String text = "Your trade has been executed:\n\n" +
+                "Stock: " + tradeEventDTO.getSymbol() + "\n" +
+                "Quantity: " + tradeEventDTO.getTotalQuantity() + "\n" +
+                "Executed Quantity: " + tradeEventDTO.getFilledQuantity() + "\n" +
+                "Price: " + tradeEventDTO.getAvgFillprice() + "\n" +
+                "Status: " + tradeEventDTO.getStatus() + "\n" +
+                "Timestamp: " + tradeEventDTO.getTimeInForce() + "\n";
+
+        // Optional message
+        if (tradeEventDTO.getMessage() != null) {
+            text += "\nNote: " + tradeEventDTO.getMessage();
+        }
+
+        message.setText(text);
+
+        mailSender.send(message);
     }
 }

@@ -8,18 +8,34 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 
-@Getter @Setter
+@Setter @Getter
 public class TradeEventDTO {
 
-    private String tradeId;
-    private String investorId;
-    private String stockSymbol;
-    private OrderType orderType;
-    private int quantity;
-    private int executedQuantity;
-    private double price;
-    private TradeStatus tradeStatus;
-    private LocalDateTime timestamp;
+//    private String tradeId;
+//    private String investorId;
+//    private String stockSymbol;
+//    private OrderType orderType;
+//    private int quantity;
+//    private int executedQuantity;
+//    private double price;
+//    private double totalAmount;
+//    private TradeStatus tradeStatus;
+//    private LocalDateTime timestamp;
+
+    //Kari's Team DTO
+
+    private String orderId;
+    private String userId;
+    private String symbol;
+    private String side;
+    private OrderType type;
+    private TradeStatus status;
+    private int totalQuantity;
+    private int filledQuantity;
+    private double avgFillprice;
+    private String timeInForce;
+    private LocalDateTime updatedAt;
+
 
     //optional
     private String message;

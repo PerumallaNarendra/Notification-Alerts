@@ -1,5 +1,6 @@
 package com.apex.trade.Notification_Alerts.price_alert.service;
 
+import com.apex.trade.Notification_Alerts.notification_service.NotificationService;
 import com.apex.trade.Notification_Alerts.price_alert.model.PriceAlert;
 import com.apex.trade.Notification_Alerts.price_alert.repository.PriceAlertRepository;
 import org.springframework.stereotype.Service;
