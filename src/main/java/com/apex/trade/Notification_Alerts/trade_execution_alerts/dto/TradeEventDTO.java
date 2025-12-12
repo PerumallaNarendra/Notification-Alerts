@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 
-@Getter @Setter
+@Setter @Getter
 public class TradeEventDTO {
 
 //    private String tradeId;

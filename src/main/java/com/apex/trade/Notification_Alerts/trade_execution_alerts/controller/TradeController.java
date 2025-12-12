@@ -18,7 +18,6 @@ public class TradeController {
         this.producer = producer;
     }
 
-
     @PostMapping("/execute")
     public ResponseEntity<TradeEventDTO> executeTrade(@RequestBody TradeEventDTO tradeEventDTO) {
 

@@ -1,9 +1,9 @@
 package com.apex.trade.Notification_Alerts.trade_execution_alerts.kafka.consumer;
 
+import com.apex.trade.Notification_Alerts.notification_service.NotificationService;
 import com.apex.trade.Notification_Alerts.trade_execution_alerts.dto.TradeEventDTO;
 import com.apex.trade.Notification_Alerts.trade_execution_alerts.mock.MockData;
 import com.apex.trade.Notification_Alerts.trade_execution_alerts.mock.UserData;
-import com.apex.trade.Notification_Alerts.trade_execution_alerts.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import java.util.Optional;
 public class TradeConsumer {
 
     @Autowired
-    private EmailService emailService;
+    private NotificationService notificationService;
 
     @Autowired
     private MockData mockData;
@@ -27,6 +27,6 @@ public class TradeConsumer {
                 .stream()
                 .filter(d-> d.getUserId().equals(tradeEventDTO.getUserId()))
                 .findFirst();
-        userData.ifPresent(data -> emailService.sendTradeAlertEmail(data.getEmail(), tradeEventDTO));
+        userData.ifPresent(data -> notificationService.sendTradeAlertEmail(data.getEmail(), tradeEventDTO));
     }
 }
