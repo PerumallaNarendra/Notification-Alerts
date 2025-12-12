@@ -57,15 +57,15 @@ public class NotificationService {
     public void sendTradeAlertEmail(String to, TradeEventDTO tradeEventDTO) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
-        message.setSubject("Trade Execution Alert - " + tradeEventDTO.getTradeId());
+        message.setSubject("Trade Execution Alert - " + tradeEventDTO.getOrderId());
 
         String text = "Your trade has been executed:\n\n" +
-                "Stock: " + tradeEventDTO.getStockSymbol() + "\n" +
-                "Quantity: " + tradeEventDTO.getQuantity() + "\n" +
-                "Executed Quantity: " + tradeEventDTO.getExecutedQuantity() + "\n" +
-                "Price: " + tradeEventDTO.getPrice() + "\n" +
-                "Status: " + tradeEventDTO.getTradeStatus() + "\n" +
-                "Timestamp: " + tradeEventDTO.getTimestamp() + "\n";
+                "Stock: " + tradeEventDTO.getSymbol() + "\n" +
+                "Quantity: " + tradeEventDTO.getTotalQuantity() + "\n" +
+                "Executed Quantity: " + tradeEventDTO.getFilledQuantity() + "\n" +
+                "Price: " + tradeEventDTO.getAvgFillprice() + "\n" +
+                "Status: " + tradeEventDTO.getStatus() + "\n" +
+                "Timestamp: " + tradeEventDTO.getTimeInForce() + "\n";
 
         // Optional message
         if (tradeEventDTO.getMessage() != null) {

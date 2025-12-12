@@ -1,5 +1,6 @@
 package com.apex.trade.Notification_Alerts.trade_execution_alerts.service;
 
+import com.apex.trade.Notification_Alerts.notification_service.NotificationService;
 import com.apex.trade.Notification_Alerts.trade_execution_alerts.dto.TradeEventDTO;
 import com.apex.trade.Notification_Alerts.trade_execution_alerts.model.TradeStatus;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,7 @@ class EmailServiceTest {
     private JavaMailSender mailSender;
 
     @InjectMocks
-    private EmailService emailService;
+    private NotificationService notificationService;
 
     @Test
     void testSendTradeAlertEmail() {
@@ -46,7 +47,7 @@ class EmailServiceTest {
                 ArgumentCaptor.forClass(SimpleMailMessage.class);
 
         // Act
-        emailService.sendTradeAlertEmail(toEmail, dto);
+        notificationService.sendTradeAlertEmail(toEmail, dto);
 
         // Assert
         verify(mailSender, times(1)).send(messageCaptor.capture());
