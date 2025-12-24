@@ -15,9 +15,10 @@ public class PriceAlertController {
         this.priceAlertService = priceAlertService;
     }
 
-    @PostMapping
+    @PostMapping("/create-alert")
     public ResponseEntity<PriceAlert> createAlert(@RequestBody PriceAlert alert) {
         PriceAlert savedAlert = priceAlertService.createAlert(alert);
+        System.out.println("hitting api👍");
         return ResponseEntity.ok(savedAlert);
     }
 
